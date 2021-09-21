@@ -5,13 +5,13 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 `;
 
 export const ContainerLogin = styled.div`
   background: white;
-  max-width: 962px;
+  max-width: 720px;
 
   display: flex;
   flex-direction: column;
