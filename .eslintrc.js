@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'prettier', 'plugin:testing-library/react', 'plugin:jest-dom/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -18,6 +18,8 @@ module.exports = {
   },
   plugins: ['react', 'prettier', 'react-hooks'],
   rules: {
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [
       'warn',
       {
@@ -57,48 +59,7 @@ module.exports = {
     camelcase: [
       'error',
       {
-        allow: [
-          'jwt_decode',
-          'grant_type',
-          'redirect_uri',
-          'client_id',
-          'refresh_token',
-          'sender_role',
-          'phone_number',
-          'pt_br',
-          '_id',
-          'category_id',
-          'short_answer',
-          'ticket_id',
-          'valid_to_exchange_refund_selected',
-          'aguardando_cliente',
-          'aguardando_atendimento',
-          'sla_vencido',
-          'sla_vence_hoje',
-          'sla_vence_3_dias',
-          'com_reclamacao',
-          'com_mediacao',
-          'motivo_assunto',
-          'interacoes_chat',
-          'protocolos_atendidos_dia',
-          'protocolos_atendidos_horario',
-          'satisfacao_media',
-          'tempo_medio',
-          'primeira_interacao',
-          'n_atendimentos',
-          'protocolos_atendidos_por_dia',
-          'ultimas_10_avaliacoes',
-          'abertos_no_periodo',
-          'finalizados_no_periodo',
-          'novos_geral',
-          'sla_estourado_geral',
-          'satisfacao_geral',
-          'abertos_geral',
-          'ticket_type',
-          'em_atendimento_geral',
-          'sla_estourado',
-          'em_atendimento',
-        ],
+        allow: ['jwt_decode'],
       },
     ],
     'prettier/prettier': [
@@ -108,4 +69,12 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['**/*.spec.js', '**/*.spec.jsx'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

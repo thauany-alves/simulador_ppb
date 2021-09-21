@@ -1,4 +1,4 @@
-import React from 'react';
+import { Button } from 'antd';
 import * as S from './styles';
 
 export function LoginPageComponent() {
@@ -12,7 +12,7 @@ export function LoginPageComponent() {
 
           <input type="password" name="password" placeholder="Password" />
 
-          <button type="submit">Entrar</button>
+          <Button type="submit">Fazer login</Button>
         </form>
       </S.ContainerLogin>
     </S.Container>
