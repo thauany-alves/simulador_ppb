@@ -12,13 +12,7 @@ export function LoginPage() {
 
   function handleLogin(event) {
     event.preventDefault();
-
-    const user = {
-      username,
-      password
-    };
-
-    console.log(user);
+    // to do
   }
 
   return (
@@ -27,9 +21,21 @@ export function LoginPage() {
         <h2>Login</h2>
 
         <form onSubmit={handleLogin}>
-          <Input type="text" name="username" value={username} placeholder="Username" onChange={e => setUsername(e.target.value)} />
+          <Input
+            type="text"
+            name="username"
+            value={username}
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-          <Input type="password" name="password" value={password} placeholder="Password" onChange={e => setPassword(e.target.value)} />
+          <Input
+            type="password"
+            name="password"
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
           <Button type="submit">Fazer login</Button>
         </form>
