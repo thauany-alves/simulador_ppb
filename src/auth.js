@@ -1,3 +1,3 @@
-export default function isAuthenticated(){
-  return false; 
+export default function isAuthenticated() {
+  return false;
 }

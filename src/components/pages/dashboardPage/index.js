@@ -1,5 +1,4 @@
+import React from 'react';
 export function DashboardPageComponent() {
-  return(
-    <h1>Dashboard</h1>  
-  );
+  return <h1>Dashboard</h1>;
 }

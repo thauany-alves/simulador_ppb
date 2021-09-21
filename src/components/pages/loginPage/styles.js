@@ -48,6 +48,4 @@ export const ContainerLogin = styled.div`
       border-radius: 0.25rem;
     }
   }
-
-
 `;

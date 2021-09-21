@@ -10,8 +10,8 @@ export function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={LoginPage} />
-        <PrivateRoute path="/dashboard" component={DashboardPage}/>
+        <PrivateRoute path="/dashboard" component={DashboardPage} />
       </Switch>
-    </ BrowserRouter>
+    </BrowserRouter>
   );
 }
