@@ -6,22 +6,21 @@ import * as S from './styles';
 export function LoginPage() {
   const { control, handleSubmit } = useForm();
 
-  function handleLogin(event) {
-    event.preventDefault();
-    // to do
-  }
+  const onSubmit = (data) => console.log(data);
 
   return (
     <S.Container>
       <S.ContainerLogin>
         <h2>Login</h2>
 
-        <form onSubmit={handleSubmit(handleLogin)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <InputForm control={control} name="username" placeholder="Usuário" />
 
           <InputForm control={control} name="password" placeholder="Senha" isPassword />
 
-          <Button type="submit">Fazer login</Button>
+          <Button type="primary" htmlType="submit">
+            Fazer login
+          </Button>
         </form>
       </S.ContainerLogin>
     </S.Container>
