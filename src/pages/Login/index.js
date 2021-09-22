@@ -1,14 +1,10 @@
-// import { useForm } from "react-hook-form";
-import { useState } from 'react';
-import { Button, Input } from 'antd';
-// import { InputForm } from '../../components/forms/InputForm'
+import { Button } from 'antd';
+import { useForm } from 'react-hook-form';
+import { InputForm } from '../../components/forms/InputForm';
 import * as S from './styles';
 
 export function LoginPage() {
-  // const { control } = useForm();
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const { control, handleSubmit } = useForm();
 
   function handleLogin(event) {
     event.preventDefault();
@@ -20,22 +16,10 @@ export function LoginPage() {
       <S.ContainerLogin>
         <h2>Login</h2>
 
-        <form onSubmit={handleLogin}>
-          <Input
-            type="text"
-            name="username"
-            value={username}
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-          />
+        <form onSubmit={handleSubmit(handleLogin)}>
+          <InputForm control={control} name="username" placeholder="Usuário" />
 
-          <Input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <InputForm control={control} name="password" placeholder="Senha" isPassword />
 
           <Button type="submit">Fazer login</Button>
         </form>

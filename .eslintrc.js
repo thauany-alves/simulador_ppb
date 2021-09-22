@@ -1,9 +1,16 @@
 module.exports = {
   env: {
-    browser: true,
     es6: true,
+    jest: true,
+    browser: 1,
   },
-  extends: ['airbnb', 'prettier', 'plugin:testing-library/react', 'plugin:jest-dom/recommended'],
+  extends: [
+    'airbnb',
+    'eslint:recommended',
+    'prettier',
+    'plugin:testing-library/react',
+    'plugin:jest-dom/recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -16,10 +23,8 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier', 'react-hooks'],
+  plugins: ['react', 'prettier', 'react-hooks', 'jest'],
   rules: {
-    'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [
       'warn',
       {
@@ -27,16 +32,16 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
+    'react/react-in-jsx-scope': 'off',
     'no-param-reassign': 'off',
-    'no-console': [
-      'error',
-      {
-        allow: ['tron'],
-      },
-    ],
     'react/prop-types': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'off',
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
     'consistent-return': 'off',
     'react/jsx-props-no-spreading': [
       0,
@@ -54,18 +59,6 @@ module.exports = {
       'error',
       {
         allow: ['_embedded', '_links'],
-      },
-    ],
-    camelcase: [
-      'error',
-      {
-        allow: ['jwt_decode'],
-      },
-    ],
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
       },
     ],
   },

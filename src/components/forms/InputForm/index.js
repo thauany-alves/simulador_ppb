@@ -6,14 +6,19 @@ export function InputForm({ control, name, error, isPassword, isRequired = false
   return (
     <S.Container>
       <Controller
-        render={({ field: { onChange, value } }) => (
-          <Input onChange={onChange} value={value} {...rest} />
-        )}
         name={name}
         control={control}
         rules={{
           required: isRequired,
         }}
+        render={({ field: { onChange, value } }) => (
+          <Input
+            type={isPassword ? 'password' : 'text'}
+            onChange={onChange}
+            value={value}
+            {...rest}
+          />
+        )}
       />
       {error && <S.Error>{error}</S.Error>}
     </S.Container>
